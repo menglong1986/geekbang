@@ -1,4 +1,3 @@
-
 #订单表
 CREATE TABLE `t_order` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
