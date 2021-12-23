@@ -1,0 +1,32 @@
+sharding:
+  jdbc:
+    dataSource:
+      names: db-master,db-slave
+      db-master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/demo1?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: Root123
+        maxPoolSize: 5
+      db-slave:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/demo2?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: Root123
+        maxPoolSize: 5
+    config:
+      masterslave:
+        load-balance-algorithm-type: round_robin
+        name: db2m1s1
+        master-data-source-name: db-master
+        slave-data-source-names: db-slave
+
+mybatis:
+  type-aliases-package: com.example.demo.mapper
+  mapperLocations: classpath:mapper/*Mapper.xml
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
