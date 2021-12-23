@@ -17,12 +17,12 @@ public class UserController {
     private IUserService iUserService;
 
     @GetMapping("/list")
-    public List<User> listByMaster() throws Exception {
+    public List<User> listByMaster()  {
         return iUserService.list();
     }
 
     @GetMapping("/save")
-    public void save() throws Exception {
+    public void save()  {
          iUserService.save();
     }
 }
