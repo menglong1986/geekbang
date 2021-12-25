@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <resultMap id="baseResultMap" type="com.example.demo.model.User">
+        <id column="id" property="id" javaType="java.lang.Long" jdbcType="INTEGER"></id>
+        <result column="name" property="username" javaType="java.lang.String" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <insert id="save">
+        insert into t_user (id,name) values (1,2);
+    </insert>
+
+    <select id="list" resultMap="baseResultMap">
+        SELECT *
+        FROM t_user
+    </select>
+
+</mapper>
