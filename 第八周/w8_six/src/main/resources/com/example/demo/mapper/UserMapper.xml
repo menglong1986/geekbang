@@ -7,12 +7,7 @@
         <result column="name" property="username" javaType="java.lang.String" jdbcType="VARCHAR"></result>
     </resultMap>
     <insert id="save">
-        insert into t_user (id,name) values (1,2);
+        insert into user (id,username,mobile) values (#{id},#{username},#{mobile});
     </insert>
-
-    <select id="list" resultMap="baseResultMap">
-        SELECT *
-        FROM t_user
-    </select>
 
 </mapper>
