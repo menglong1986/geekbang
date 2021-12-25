@@ -50,7 +50,7 @@ public class XaService implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        addUsers();
+        //addUsers();
     }
 
 }

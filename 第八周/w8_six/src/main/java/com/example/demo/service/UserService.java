@@ -12,10 +12,6 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    public User getById(Long id) {
-        return userMapper.getById(id);
-    }
-
     public void save(User user) {
         userMapper.save(user);
     }
